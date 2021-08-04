@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Keyword extraction
+    </title>
+    <h1>
+        Document Insights
+    </h1>
+</head>
+<style>
+.wrapper {
+    text-align: center;
+}
+
+.button {
+
+    position: absolute;
+    cursor:pointer;
+
+}
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 3px solid green;
+  padding: 50px;
+  margin-left:auto;
+  margin-right:auto
+
+}
+h1 {text-align: center;}
+h2 {text-align: center;}
+
+</style>
+   <body>
+   <h2>
+    LDA gives keywords based on the number of topics.
+    Named entity recognition segregates the documents into three entities,Person,Organization,GPE(Geo Political Entity)
+    </h2>
+   <div>
+
+
+      <form action = "http://localhost:5000/uploader" method = "POST" class="box"
+         enctype = "multipart/form-data">
+
+          <p style="font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;">
+              Please upload your file from the computer
+          </p>
+
+
+
+          <input type = "file" name = "file" class="box_file" />
+          <br>
+          <br>
+
+           <button type="submit" class="button">Submit</button>
+
+           </form>
+   </div>
+
+
+
+
+
+   </body>
+
+
+
+
+
+
+
+
+
+
+</html>

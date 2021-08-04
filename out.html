@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Extraction</title>
+
+
+</head>
+<style>
+
+
+table {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2}
+
+table tr:hover {background-color:#ddd;}
+
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: green;
+  color: white;
+}
+.wrapper {
+    text-align: center;
+}
+
+
+h1 {text-align: center;}
+h2 {text-align: center;}
+.button {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+   position: absolute;
+   top: 10px;
+   right:15px;
+}
+
+
+</style>
+<body>
+<div class="wrapper">
+    <button class="button" id="myButton">Home</button>
+</div>
+<h1>Document Insights</h1>
+<h2>
+    LDA gives keywords based on the number of topics.
+    Named entity recognition segregates the documents into three entities,Person,Organization,GPE(Geo Political Entity)
+</h2>
+<h2>Important Keywords per topic are</h2>
+<table class="centre">
+    <tr>
+        <th>Topics</th>
+        <th>Words</th>
+        <th>Probabilities</th>
+    </tr>
+    {% for i in range(0,5)%}
+    <tr>
+        <td>{{i}}</td>
+        <td>{{words[i]}}</td>
+        <td>{{prob[i]}}</td>
+    </tr>
+    {%endfor%}
+
+</table>
+<br>
+<br>
+<h2>Named Entity Recognition for the document is</h2>
+
+
+<table class="centre">
+    <tr>
+    <th>Entity</th>
+    <th>Nouns</th>
+    </tr>
+    <tr>
+        <td>Person</td>
+        <td>{{person}}</td>
+    </tr>
+    <tr>
+        <td>GPE</td>
+        <td>{{gpe}}</td>
+    </tr>
+    <tr>
+        <td>Organization</td>
+        <td>{{organization}}</td>
+    </tr>
+
+</table>
+
+
+
+
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "http://127.0.0.1:5000/";
+    };
+</script>
+
+
+
+
+</body>
+</html>
